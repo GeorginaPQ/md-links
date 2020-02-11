@@ -1,0 +1,30 @@
+{
+  "name": "md-links-004gdl",
+  "version": "1.0.0",
+  "description": "Libreria que permite leer y analizar archivos en formato Markdown, para verificar los links que contengan y reportar algunas estadísticas.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --verbose --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GeorginaPQ/md-links.git"
+  },
+  "keywords": [
+    "markdown",
+    "links",
+    "link",
+    "verify"
+  ],
+  "author": "Claudia Georgina Perez Quintana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GeorginaPQ/md-links/issues"
+  },
+  "homepage": "https://github.com/GeorginaPQ/md-links#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.1"
+  }
+}
