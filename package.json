@@ -1,5 +1,5 @@
 {
-  "name": "md-links-004gdl",
+  "name": "GeorginaPQ/md-links",
   "version": "1.0.0",
   "description": "Libreria que permite leer y analizar archivos en formato Markdown, para verificar los links que contengan y reportar algunas estadísticas.",
   "main": "index.js",
