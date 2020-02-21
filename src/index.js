@@ -5,9 +5,12 @@ arrayReadFile(absolutePath,(err, data) => {
     if(err) {
         console.log(err)
     }
+    data.forEach((item, i) => {
+        console.log (item, i)
+    })
 })
 
-
+//data es arrayLinks
 
 
 
