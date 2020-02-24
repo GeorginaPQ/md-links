@@ -5,13 +5,12 @@ module.exports = (absolutePath, callback) => {
         if(err) {
             return callback(err)
         }
-        const expression = 'https://'
-        const regex = new RegExp(expression)
-        const arraylineas = data.toString().split('\n')
-        const arrayLinks = arraylineas.filter((item) => {
-            return item.match(regex)
-        })        
-        return callback(null, arrayLinks)
+        if(!err){ 
+            const expression = /(https?:\/\/[^\s\)]+)/g;
+            const regex = new RegExp(expression)
+            const links = data.match(regex)
+            return callback (null, links)             
+        }       
     })
 }
 

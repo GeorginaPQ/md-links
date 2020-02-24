@@ -1,16 +1,15 @@
-const absolutePath = process.argv[2];
 const arrayReadFile = require('./readfile');
-
+const absolutePath = process.argv[2];
 arrayReadFile(absolutePath,(err, data) => {
     if(err) {
         console.log(err)
     }
-    data.forEach((item, i) => {
-        console.log (item, i)
-    })
+    if(!err) {
+        console.log (data)
+    }
 })
 
-//data es arrayLinks
+//data es links
 
 
 
