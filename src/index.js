@@ -1,15 +1,25 @@
 const arrayReadFile = require('./readfile');
-const absolutePath = process.argv[2];
-arrayReadFile(absolutePath,(err, data) => {
-    if(err) {
-        console.log(err)
-    }
-    if(!err) {
-        console.log (data)
-    }
-})
+const verifyLinks = require('./verifyLinks');
+const getLinks = require('./getLinks')
 
-//data es links
+
+
+
+async function mdLinks(){
+
+    const absolutePath = process.argv[2];
+    
+     let text = await arrayReadFile(absolutePath)
+     let links = getLinks(text);
+    
+     console.log(links);
+    //data es links
+    
+
+}
+
+mdLinks();
+
 
 
 
