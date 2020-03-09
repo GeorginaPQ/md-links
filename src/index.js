@@ -1,16 +1,22 @@
 const arrayReadFile = require('./readfile');
 const verifyLinks = require('./verifyLinks');
-const getLinks = require('./getLinks')
+const getLinks = require('./getLinks');
+const runOptions = require('./options');
 
+//const path = require('path')
 
-
+//console.log(path)
 
 async function mdLinks(){
 
     const absolutePath = process.argv[2];
-    
-     let text = await arrayReadFile(absolutePath)
-     let links = getLinks(text);
+    const pathOptions = process.argv;
+    const options = runOptions (pathOptions)    
+    console.log('Viene de mi modulo', options)
+   /*  let option = await runOptions(pathOptions)
+    let optionResolv =  */
+    let text = await arrayReadFile(absolutePath)
+    let links = getLinks(text, absolutePath);
     
      console.log(links);
     //data es links
@@ -19,7 +25,6 @@ async function mdLinks(){
 }
 
 mdLinks();
-
 
 
 
