@@ -1,5 +1,5 @@
  const runOptions = (pathOptions) => {
-     console.log(pathOptions)
+     //console.log(pathOptions)
     const options = {
         validate: false,
         stats: false

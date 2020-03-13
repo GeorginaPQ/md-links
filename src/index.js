@@ -1,10 +1,9 @@
-const arrayReadFile = require('./readfile');
-const verifyLinks = require('./verifyLinks');
-const getLinks = require('./getLinks');
-const runOptions = require('./options');
-
+const readFile = require('./readfile')
+const verifyLinks = require('./verifyLinks')
+const getLinks = require('./getLinks')
+const runOptions = require('./options')
+const getStats = require('./stats')
 //const path = require('path')
-
 //console.log(path)
 
 async function mdLinks(){
@@ -12,19 +11,51 @@ async function mdLinks(){
     const absolutePath = process.argv[2];
     const pathOptions = process.argv;
     const options = runOptions (pathOptions)    
-    console.log('Viene de mi modulo', options)
+    /* console.log('Viene de mi modulo', options) */
    /*  let option = await runOptions(pathOptions)
     let optionResolv =  */
-    let text = await arrayReadFile(absolutePath)
-    let links = getLinks(text, absolutePath);
     
-     console.log(links);
+    let text = await readFile(absolutePath)
+    let links = getLinks(text, absolutePath)
+    let resultLinks = await verifyLinks(links) 
+    let statsLinks = getStats(resultLinks)
+    console.log(statsLinks)
+    console.log(resultLinks)
+
+   /*  if(options.validate === true){
+        verifyLinks
+
+    }else if(....){
+
+    } */
+
+
+    
+    /*readFile(absolutePath)
+    .then((text)=>{
+      let links = getLinks(text, absolutePath)
+      return links
+    })
+    .then((links) => {
+        if(options.validate === true){
+
+        }else{
+
+        }
+    })
+    .cash((err)=>{
+        console.log(err)
+    })*/
+
+
+    
+    
     //data es links
     
 
 }
 
-mdLinks();
+mdLinks()
 
 
 
