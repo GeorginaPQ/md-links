@@ -15,7 +15,7 @@ function getLinks(text, absolutePath){
         arrayLinks.push(object)
     }
 
-
+//poner un if por si no hay links
     return arrayLinks;
 }
 

@@ -6,10 +6,8 @@ module.exports = (absolutePath) => {
         fs.readFile(absolutePath, 'utf-8', (err, data)=>{
             if(err) {
                 reject(err);
-            }
-            if(!err){ 
-                resolve(data)
-            }       
+            } 
+            resolve(data)      
         })
     });
     

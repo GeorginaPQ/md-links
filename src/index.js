@@ -7,11 +7,12 @@ const getStats = require('./stats')
 //console.log(path)
 
 async function mdLinks(){
+    
 
     const absolutePath = process.argv[2];
     const pathOptions = process.argv;
     const options = runOptions (pathOptions)    
-    /* console.log('Viene de mi modulo', options) */
+    //console.log('Viene de mi modulo', options)
    /*  let option = await runOptions(pathOptions)
     let optionResolv =  */
     
@@ -19,10 +20,19 @@ async function mdLinks(){
     let links = getLinks(text, absolutePath)
     let resultLinks = await verifyLinks(links) 
     let statsLinks = getStats(resultLinks)
-    console.log(statsLinks)
-    console.log(resultLinks)
+    //console.log(statsLinks)
+    //console.log(resultLinks)
+    if(options.validate === false && options.stats === false){
+        console.log(links)
+    }else if(options.validate === true && options.stats === true){
+        console.log(resultLinks), console.log(statsLinks)
+    }else if(options.validate === true){
+        console.log(resultLinks)
+    }else if(options.stats === true){
+        console.log(statsLinks)
+    }
 
-   /*  if(options.validate === true){
+    /* if(options.validate === true){
         verifyLinks
 
     }else if(....){
@@ -48,9 +58,6 @@ async function mdLinks(){
     })*/
 
 
-    
-    
-    //data es links
     
 
 }

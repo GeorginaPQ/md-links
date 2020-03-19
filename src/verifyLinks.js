@@ -2,17 +2,21 @@ const fetch = require('node-fetch')
 
 
 function verifyLinks(links){
-    return Promise.all (links.map( async url =>{
+    let verifyPromises = links.map( async url =>{
+        const data = {
+            ...url
+        }
         try{
-            const statusUrl = await fetch(url.href)
-            url['status'] = statusUrl.status
-            return url
+            const result = await fetch(url.href)
+            data.status = result.status
+            
         }
         catch(err){
-            url['stats'] = err.code
-            return url
+            data.status = err.code
         }
-    }))
+        return data 
+    })
+    return Promise.all(verifyPromises)
 }
 
 module.exports = verifyLinks;
